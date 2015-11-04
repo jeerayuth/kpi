@@ -17,7 +17,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-    <?php if (Yii::app()->session["type"] == "admin"): ?>
+                    <?php if (Yii::app()->session["type"] == "admin"): ?>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=template/form&template_type_id=<?= $template_type_id; ?>" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> เพิ่ม<?= $template_type[0]['name']; ?>ใหม่</a>
                     <?php endif ?>
 
@@ -38,15 +38,13 @@
                                     <th>หน่วยงาน</th>
                                     <th>ระยะเวลา</th>
                                     <th>แก้ไขล่าสุด</th>
-                                    <th>สถานะ</th>
-    <?php if (Yii::app()->session["type"] == "admin"): ?>
-                                        <th>จัดการ</th>
-                                    <?php endif ?>
-                                    <th>เป้าหมาย</th>
+                                    <th>สถานะ</th>                           
+                                    <th>จัดการ</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-    <?php $counter = 0; ?>
+                                <?php $counter = 0; ?>
                                 <? foreach($model as $item){ ?>
 
                                 <tr class="odd gradeX">
@@ -56,16 +54,11 @@
                                     <td><?= $item['type_id']; ?></td>
                                     <td><?= $item['created']; ?></td>  
                                     <td><?= $item['state']; ?></td> 
-                                    <? if(Yii::app()->session["type"] == "admin"): ?>  
                                     <td calss="center">
+                                        <? if(Yii::app()->session["type"] == "admin"): ?>  
                                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=template/form&id=<?= $item['id']; ?>&template_type_id=<?= $template_type_id; ?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-pencil"></i> แก้ไข</a>  
-                                    </td>	
-
-                                    <? endif ?>
-
-                                    <td>
+                                        <? endif ?>
                                         <a target=_blank href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=kpi/index&template_id=<?= $item['id']; ?>&title=<?= $item['title'] ?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i> เพิ่มเป้าหมาย</a>
-
                                     </td>
 
                                 </tr>
