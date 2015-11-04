@@ -14,7 +14,7 @@ class Department extends CActiveRecord {
 		}
 		function rules(){
 			return array(
-				array('name','required'),
+				array('name,template_type_id','required'),
 				array('name', 'unique'),
 			);
 		}
