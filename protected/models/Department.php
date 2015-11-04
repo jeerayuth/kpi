@@ -9,7 +9,8 @@ class Department extends CActiveRecord {
 		}
 		function attributeLabels(){
 			return array(
-				"name" => "ชื่อหน่วยงาน"
+				"name" => "ชื่อหน่วยงาน",
+                                "template_type_id" => "กลุ่มตัวชี้วัด",
 			);
 		}
 		function rules(){
