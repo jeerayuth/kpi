@@ -23,7 +23,7 @@
 
                             <div class="form-group">
                                 <label>
-    <?php echo $form->errorSummary($model); ?>
+                                <?php echo $form->errorSummary($model); ?>
                                 </label>
                             </div>
 
@@ -32,7 +32,7 @@
                                 <label>
                                 <?php echo $form->labelEx($model, "title"); ?>
                                 </label>
-    <?php echo $form->textField($model, "title", array("class" => "form-control")); ?>
+                                <?php echo $form->textField($model, "title", array("class" => "form-control")); ?>
                             </div>
 
                             <div class="form-group">

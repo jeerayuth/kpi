@@ -73,7 +73,9 @@ class UserController extends Controller
 
 
 		$this->render("//user/form", array(
-			"model" => $model));
+			"model" => $model,
+                        "id" => $id,
+                ));
 
 	}
 

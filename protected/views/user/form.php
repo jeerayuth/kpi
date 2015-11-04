@@ -50,11 +50,39 @@
 
                                 <br/>
 
-                                <?
-
-                                $type_list=CHtml::listData(Department::model()->findAll(),'id','name');
-                                echo $form->checkBoxList($model, "department_id",$type_list, array('checked'=>'checked'));  
-
+                         
+                                <?php
+                                
+                                
+                                 
+                                 //1. Generate Department All List
+                                $department_list=CHtml::listData(Department::model()->findAll(),'id','name');
+                                
+                                 if($id !='') {
+                                     
+                                    // 2. Find Field department_id from your user id
+                                    $sql = "
+                                        SELECT
+                                            department_id
+                                        FROM user
+                                            WHERE id = $id                                  
+                                        LIMIT 1
+                                    ";
+                                
+                                    $department_checked = Yii::app()->db->createCommand($sql)->queryAll();                    
+                                    $myArray = explode(',', $department_checked[0]['department_id']);
+                            
+                                    // 3. assign pre-selected list to Department list
+                                    $model->department_id = $myArray;
+                                }
+                                
+                                $htmlOptions = array(
+                                                        'separator'=>' ',
+                                                        'multiple'=>true,
+                                                        'checked'=>'checked');
+                                
+                                echo $form->checkBoxList($model, "department_id",$department_list,$htmlOptions);  
+                             
                                 ?>
 
                             </div>
