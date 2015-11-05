@@ -15,7 +15,6 @@
                                     <thead>
                                         <tr>
                                             <th>ชื่อ-สกุล</th>
-                                            <th>หน่วยงาน</th>
                                             <th>ประเภท</th>
                                             <th>วันที่ลงทะเบียน</th>
                                             <th>สถานะ</th>
@@ -28,7 +27,6 @@
 
      <tr class="odd gradeX">
           <td><?= $item['full_name']; ?></td>
-          <td><?= $item['dep_name']; ?></td>
           <td><?= $item['type']; ?></td>
           <td class="center"><?= $item['created']; ?></td>
           <td class="center"><?= $item['status']; ?></td>

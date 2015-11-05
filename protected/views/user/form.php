@@ -50,16 +50,13 @@
 
                                 <br/>
 
-                         
+
                                 <?php
-                                
-                                
-                                 
-                                 //1. Generate Department All List
-                                $department_list=CHtml::listData(Department::model()->findAll(),'id','name');
-                                
-                                 if($id !='') {
-                                     
+                                //1. Generate Department All List
+                                $department_list = CHtml::listData(Department::model()->findAll(), 'id', 'name');
+
+                                if ($id != '') {
+
                                     // 2. Find Field department_id from your user id
                                     $sql = "
                                         SELECT
@@ -68,21 +65,20 @@
                                             WHERE id = $id                                  
                                         LIMIT 1
                                     ";
-                                
-                                    $department_checked = Yii::app()->db->createCommand($sql)->queryAll();                    
+
+                                    $department_checked = Yii::app()->db->createCommand($sql)->queryAll();
                                     $myArray = explode(',', $department_checked[0]['department_id']);
-                            
+
                                     // 3. assign pre-selected list to Department list
                                     $model->department_id = $myArray;
                                 }
-                                
+
                                 $htmlOptions = array(
-                                                        'separator'=>' ',
-                                                        'multiple'=>true,
-                                                        'checked'=>'checked');
-                                
-                                echo $form->checkBoxList($model, "department_id",$department_list,$htmlOptions);  
-                             
+                                    'separator' => ' ',
+                                    'multiple' => true,
+                                    'checked' => 'checked');
+
+                                echo $form->checkBoxList($model, "department_id", $department_list, $htmlOptions);
                                 ?>
 
                             </div>
@@ -90,32 +86,32 @@
 
                             <div class="form-group">
                                 <label>
-                                    <?php echo $form->labelEx($model, "username"); ?>
+    <?php echo $form->labelEx($model, "username"); ?>
                                 </label>
-                                <?php echo $form->textField($model, "username", array("class" => "form-control")); ?>
+    <?php echo $form->textField($model, "username", array("class" => "form-control")); ?>
                             </div>
 
                             <div class="form-group">
                                 <label>
-                                    <?php echo $form->labelEx($model, "password"); ?>
+    <?php echo $form->labelEx($model, "password"); ?>
                                 </label>
-                                <?php echo $form->passwordField($model, "password", array("class" => "form-control")); ?>
+    <?php echo $form->passwordField($model, "password", array("class" => "form-control")); ?>
                             </div>
 
 
                             <div class="form-group">
                                 <label>
-                                    <?php echo $form->labelEx($model, "type"); ?>
+    <?php echo $form->labelEx($model, "type"); ?>
                                 </label>
 
-                                <?php echo ZHtml::enumDropDownList($model, "type", array("class" => "form-control", "empty" => "--เลือกประเภทผู้ใช้งาน--")); ?>
+                                    <?php echo ZHtml::enumDropDownList($model, "type", array("class" => "form-control", "empty" => "--เลือกประเภทผู้ใช้งาน--")); ?>
                             </div>
 
                             <div class="form-group">
                                 <label>
-                                    <?php echo $form->labelEx($model, "status"); ?>
+    <?php echo $form->labelEx($model, "status"); ?>
                                 </label>
-                                <?php echo ZHtml::enumDropDownList($model, "status", array("class" => "form-control", "empty" => "--เลือกสถานะผู้ใช้งาน--")); ?>
+    <?php echo ZHtml::enumDropDownList($model, "status", array("class" => "form-control", "empty" => "--เลือกสถานะผู้ใช้งาน--")); ?>
 
                             </div>
 
@@ -126,7 +122,7 @@
 
 
 
-                            <?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
                         </div>
 
                         <div class="col-lg-5">

@@ -52,7 +52,7 @@
                                     <td><?= $item['result']; ?></td>
                                     <td>
                                         <? if(($item['target'] > 0) && ($item['result'] >= 0)): ?>
-                                        <?= ($item['result'] / $item['target']) * 100; ?>
+                                        <?= number_format((($item['result'] / $item['target']) * 100), 2, '.', ''); ?>%
                                         <? endif; ?>
                                     </td>
                                     <td><?= $item['created']; ?></td>  

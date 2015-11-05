@@ -13,11 +13,12 @@ class KpiController extends Controller {
         if (!empty($template_id)) {
             $sql = "SELECT 
                     k.*, n.name as newyear, t.goal
+                    
                     FROM kpi k
                     LEFT OUTER JOIN newyear n ON n.id = k.newyear_id
                     LEFT OUTER JOIN template t ON t.id = k.template_id
                     WHERE k.template_id = '$template_id'
-                    ORDER BY n.name DESC
+                    ORDER BY n.id, k.created DESC
 				";
 
             $model = Yii::app()->db->createCommand($sql)->queryAll();
