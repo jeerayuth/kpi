@@ -10,6 +10,7 @@ class Template extends CActiveRecord {
 		function attributeLabels(){
 			return array(
 				"title" => "ชื่อตัวชี้วัด",
+                                "goal" => "เกณฑ์เป้าหมาย",
 				"department_id" => "หน่วยงาน",
 				"details" => "รายละเอียด",
 				"type_id" => "ระยะเวลา",

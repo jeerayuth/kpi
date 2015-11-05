@@ -34,6 +34,17 @@
                                 </label>
                                 <?php echo $form->textField($model, "title", array("class" => "form-control")); ?>
                             </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                <?php echo $form->labelEx($model, "goal"); ?>
+                                </label>
+                                <?php echo $form->textField($model, "goal", 
+                                        array("class" => "form-control",
+                                        "placeholder" => "เช่น ร้อยละ 50",
+                                            
+                                        )); ?>
+                            </div>
 
                             <div class="form-group">
                                 <label>

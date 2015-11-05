@@ -1,7 +1,5 @@
 <?php if (Yii::app()->session["username"] != null) { ?>
 
-
-
     <?php
     $sql = "
 			SELECT name 
@@ -35,6 +33,7 @@
                                 <tr>
                                     <th>ลำดับ</th>
                                     <th>ชื่อตัวชี้วัด</th>
+                                    <th>เกณฑ์เป้าหมาย</th>
                                     <th>หน่วยงาน</th>
                                     <th>ระยะเวลา</th>
                                     <th>แก้ไขล่าสุด</th>
@@ -50,6 +49,7 @@
                                 <tr class="odd gradeX">
                                     <td><?= $counter += 1; ?></td>
                                     <td><?= $item['title']; ?></td>
+                                    <td><?= $item['goal']; ?></td>
                                     <td><?= $item['department_name']; ?></td>
                                     <td><?= $item['type_id']; ?></td>
                                     <td><?= $item['created']; ?></td>  

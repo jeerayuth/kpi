@@ -3537,3 +3537,17 @@ Stack trace:
 REQUEST_URI=/kpi/index.php?r=user/form
 in D:\XAMPP\htdocs\kpi\protected\controllers\UserController.php (62)
 in D:\XAMPP\htdocs\kpi\index.php (13)
+2015/11/05 07:17:33 [error] [php] implode(): Invalid arguments passed (D:\XAMPP\htdocs\kpi\protected\controllers\UserController.php:58)
+Stack trace:
+#0 D:\XAMPP\htdocs\kpi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 D:\XAMPP\htdocs\kpi\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 D:\XAMPP\htdocs\kpi\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 D:\XAMPP\htdocs\kpi\framework\web\CController.php(286): UserController->runAction()
+#4 D:\XAMPP\htdocs\kpi\framework\web\CController.php(265): UserController->runActionWithFilters()
+#5 D:\XAMPP\htdocs\kpi\framework\web\CWebApplication.php(282): UserController->run()
+#6 D:\XAMPP\htdocs\kpi\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\XAMPP\htdocs\kpi\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 D:\XAMPP\htdocs\kpi\index.php(13): CWebApplication->run()
+REQUEST_URI=/kpi/index.php?r=user/form
+in D:\XAMPP\htdocs\kpi\protected\controllers\UserController.php (58)
+in D:\XAMPP\htdocs\kpi\index.php (13)
