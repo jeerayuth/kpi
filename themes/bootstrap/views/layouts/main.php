@@ -65,7 +65,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site">KPI Management System 1.0</a>
+                    <a class="navbar-brand" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site"><i class="glyphicon glyphicon-signal"></i> KPI Management System 1.0</a>
 
                     <!-- /.navbar-header -->
                 </div>

@@ -25,8 +25,7 @@
 
     <!-- Custom Fonts -->
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
+    
     </head>
 
     <body>
@@ -35,7 +34,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-			KPI Management System 1.0
+			<i class="glyphicon glyphicon-signal"></i>  KPI Management System 1.0
       </a>
     </div>
   </div>
