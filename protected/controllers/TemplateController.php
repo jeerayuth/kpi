@@ -31,7 +31,7 @@ class TemplateController extends Controller {
 
                 if (Yii::app()->session["type"] != "admin") {
 
-                    $sql .= " AND t.department_id in (" .
+                    $sql .= "AND t.state = 'enable' AND t.department_id in (" .
                             Yii::app()->session["department_id"] . ") ";
                 }
 

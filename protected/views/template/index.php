@@ -58,7 +58,7 @@
                                         <? if(Yii::app()->session["type"] == "admin"): ?>  
                                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=template/form&id=<?= $item['id']; ?>&template_type_id=<?= $template_type_id; ?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-pencil"></i> แก้ไข</a>  
                                         <? endif ?>
-                                        <a target=_blank href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=kpi/index&template_id=<?= $item['id']; ?>&title=<?= $item['title'] ?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i> เพิ่มเป้าหมาย</a>
+                                        <a target=_blank href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=kpi/index&template_id=<?= $item['id']; ?>&title=<?= $item['title'] ?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i> จัดการเป้าหมาย</a>
                                     </td>
 
                                 </tr>
