@@ -48,7 +48,15 @@
 
                                 <tr class="odd gradeX">
                                     <td><?= $counter += 1; ?></td>
-                                    <td><?= $item['title']; ?></td>
+                                    <td>
+                                        <?= $item['title']; ?>
+
+                                        <?php if ($item['template_type_level_name'] != null) { ?>
+                                            <span class="label label-warning">
+                                                <?= $item['template_type_level_name']; ?>
+                                            </span>
+                                        <?php } ?>
+                                    </td>
                                     <td><?= $item['goal']; ?></td>
                                     <td><?= $item['department_name']; ?></td>
                                     <td><?= $item['type_id']; ?></td>

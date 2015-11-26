@@ -19,11 +19,13 @@ class TemplateController extends Controller {
 
 		SELECT 
 				
-		t.*, d.name AS department_name
+		t.*, d.name AS department_name,
+                l.name as template_type_level_name
 				
 		FROM template t 
 				
 		LEFT OUTER JOIN  department d ON d.id = t.department_id
+                LEFT OUTER JOIN  template_type_level l ON l.id = t.template_type_level_id
 					
 		WHERE t.template_type_id = '$template_type_id'
             ";
@@ -35,7 +37,7 @@ class TemplateController extends Controller {
                             Yii::app()->session["department_id"] . ") ";
                 }
 
-                $sql .= " ORDER BY t.department_id,created DESC  ";
+                $sql .= " ORDER BY t.template_type_level_id,t.department_id,created DESC  ";
 
 
                 $model = Yii::app()->db->createCommand($sql)->queryAll();

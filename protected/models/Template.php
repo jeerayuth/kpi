@@ -12,6 +12,7 @@ class Template extends CActiveRecord {
 				"title" => "ชื่อตัวชี้วัด",
                                 "goal" => "เกณฑ์เป้าหมาย",
 				"department_id" => "หน่วยงาน",
+                                "template_type_level_id" => "ผลดำเนินงานทางด้าน",
 				"details" => "รายละเอียด",
 				"type_id" => "ระยะเวลา",
 				"created" => "วันที่สร้าง",

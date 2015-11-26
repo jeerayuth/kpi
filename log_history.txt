@@ -15,12 +15,20 @@ Update 31 ต.ค. 58
 คือ หน่วยงานทั่วไป, หน่วยงานทีม เช่น pct , หน่วยงาน โรงพยาบาล
 
 
-
 update 02 พ.ย. 58
 1. ปรับ relation ระหว่าง ตาราง template กับ kpi โดยใช้  template->id ชี้ไป ตาราง kpi แทน secretkey
 
 
-updat 03 พ.ย. 58
+=============================================================================
+
+updat 26 พ.ย. 58
+1. เพิ่มตาราง  template_type_level ใน database
+2. แก้ไขตาราง เพิ่มฟิลด์ template_type_level_id (ชนิด int  ขนาด 13)  ในตาราง template
+3. แก้ไขไฟล์ views/template/form.php
+4. แก้ไฟล์ views/template/index.php
+5. แก้ไขไฟล์ model/Template.php
+6. แก้ไฟล์ controller/TemplateController.php
+
 
 
 

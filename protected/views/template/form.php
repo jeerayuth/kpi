@@ -23,32 +23,45 @@
 
                             <div class="form-group">
                                 <label>
-                                <?php echo $form->errorSummary($model); ?>
+                                    <?php echo $form->errorSummary($model); ?>
                                 </label>
                             </div>
 
 
                             <div class="form-group">
                                 <label>
-                                <?php echo $form->labelEx($model, "title"); ?>
+                                    <?php echo $form->labelEx($model, "title"); ?>
                                 </label>
                                 <?php echo $form->textField($model, "title", array("class" => "form-control")); ?>
                             </div>
                             
+                            
                             <div class="form-group">
                                 <label>
-                                <?php echo $form->labelEx($model, "goal"); ?>
+                                    <?php echo $form->labelEx($model, "template_type_level_id"); ?>
                                 </label>
-                                <?php echo $form->textField($model, "goal", 
-                                        array("class" => "form-control",
-                                        "placeholder" => "เช่น ร้อยละ 50",
-                                            
-                                        )); ?>
+
+                                <?php
+                                $opts = CHtml::listData(Template_Type_Level::model()->findAll(), 'id', 'name');
+                                echo $form->dropDownList($model, 'template_type_level_id', $opts, array("class" => "form-control", "empty" => "--เลือกผลดำเนินงานทางด้าน--"));
+                                ?>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <label>
+                                    <?php echo $form->labelEx($model, "goal"); ?>
+                                </label>
+                                <?php
+                                echo $form->textField($model, "goal", array("class" => "form-control",
+                                    "placeholder" => "เช่น ร้อยละ 50",
+                                ));
+                                ?>
                             </div>
 
                             <div class="form-group">
                                 <label>
-                                <?php echo $form->labelEx($model, "details"); ?>
+                                    <?php echo $form->labelEx($model, "details"); ?>
                                 </label>				
                                 <?php
                                 echo $form->textArea($model, "details", array(
@@ -61,7 +74,7 @@
 
                             <div class="form-group">
                                 <label>
-                                <?php echo $form->labelEx($model, "department_id"); ?>
+                                    <?php echo $form->labelEx($model, "department_id"); ?>
                                 </label>
 
                                 <?php
@@ -72,17 +85,17 @@
 
                             <div class="form-group">
                                 <label>
-                                <?php echo $form->labelEx($model, "type_id"); ?>
+                                    <?php echo $form->labelEx($model, "type_id"); ?>
                                 </label>
-    <?php echo ZHtml::enumDropDownList($model, "type_id", array("class" => "form-control", "empty" => "--เลือกระยะเวลา--")); ?>
+                                <?php echo ZHtml::enumDropDownList($model, "type_id", array("class" => "form-control", "empty" => "--เลือกระยะเวลา--")); ?>
 
                             </div>
 
                             <div class="form-group">
                                 <label>
-                                <?php echo $form->labelEx($model, "state"); ?>
+                                    <?php echo $form->labelEx($model, "state"); ?>
                                 </label>
-    <?php echo ZHtml::enumDropDownList($model, "state", array("class" => "form-control", "empty" => "--เลือกสถานะ--")); ?>
+                                <?php echo ZHtml::enumDropDownList($model, "state", array("class" => "form-control", "empty" => "--เลือกสถานะ--")); ?>
 
                             </div>
 
@@ -94,7 +107,7 @@
 
 
 
-    <?php $this->endWidget(); ?>
+                            <?php $this->endWidget(); ?>
                         </div>
 
                         <div class="col-lg-5">
