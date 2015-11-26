@@ -56,10 +56,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=db_kpi',
+			'connectionString' => 'mysql:host=192.168.1.253;dbname=db_kpi',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'hospital',
+			'password' => 'lamae',
 			'charset' => 'utf8',
 		),
 		
