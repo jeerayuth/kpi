@@ -2,7 +2,7 @@
 
 class TemplateController extends Controller {
 
-    public function actionIndex($template_type_id = null) {
+    public function actionIndex($template_type_id = null, $department_id = null, $template_type_level_id = null) {
 
         if (Yii::app()->session["username"] != null) {
             $this->layout = "main";
@@ -20,6 +20,7 @@ class TemplateController extends Controller {
 		SELECT 
 				
 		t.*, d.name AS department_name,
+                l.bcolor,
                 l.name as template_type_level_name
 				
 		FROM template t 
@@ -29,15 +30,23 @@ class TemplateController extends Controller {
 					
 		WHERE t.template_type_id = '$template_type_id'
             ";
+                
+             if (!empty($department_id)) {
+               $sql.= " AND t.department_id = '$department_id' ";  
+             }
+             
+                if (!empty($template_type_level_id) && !empty($department_id)) {
+                $sql.= " AND  t.department_id = '$department_id'  AND t.template_type_level_id = '$template_type_level_id' ";
+            }
 
 
-                if (Yii::app()->session["type"] != "admin") {
+             //   if (Yii::app()->session["type"] != "admin") {
 
-                    $sql .= "AND t.state = 'enable' AND t.department_id in (" .
-                            Yii::app()->session["department_id"] . ") ";
-                }
+             //       $sql .= " AND t.state = 'enable' AND t.department_id in (" .
+             //               Yii::app()->session["department_id"] . ") ";
+            //    }
 
-                $sql .= " ORDER BY t.template_type_level_id,t.department_id,created DESC  ";
+                $sql .= " ORDER BY t.template_type_level_id,t.department_id,t.orderno ASC  ";
 
 
                 $model = Yii::app()->db->createCommand($sql)->queryAll();

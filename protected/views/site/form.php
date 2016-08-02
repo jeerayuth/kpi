@@ -1,3 +1,5 @@
+<?php if (Yii::app()->session["username"] != null) { ?>
+
 
 <div class="alert alert-info" role="alert">
 	
@@ -18,6 +20,12 @@
     </p>
 
 </div>
+
+
+
+<?php  } else { ?>
+	<?php $this->renderPartial("//site/_formlogin"); ?>
+<?php } ?>
 
 
 

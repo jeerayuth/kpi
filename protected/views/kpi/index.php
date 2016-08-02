@@ -6,18 +6,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
 
-                    <?php if (Yii::app()->session["type"] == "admin") { ?>
-
+      
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=kpi/form&template_id=<?= $template_id; ?>&title=<?= $title; ?>" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> เพิ่มเป้าหมายตัวชี้วัด</a>
                         &nbsp;
-                        <span class="badge">
-                            <?= $title; ?>
-                        </span>
-                    <?php } else { ?>
+          
                         <span class="badge">
                             ชื่อตัวชี้วัด: <b><?= $title; ?></b>
                         </span>
-                    <?php } ?>
+ 
 
                 </div>
                 <!-- /.panel-heading -->
@@ -30,10 +26,10 @@
                                     <th>ลำดับ</th>
                                     <th>ปีงบประมาณ</th>
                                     <th>ระยะเวลา</th>
-                                    <th>เกณฑ์เป้าหมาย</th>
+                                   <!-- <th>เกณฑ์เป้าหมาย</th> -->
                                     <th>เป้าหมาย</th>
                                     <th>ผลลัพธ์</th>
-                                    <th>ผลลัพธ์(%)</th>
+                                   <!-- <th>ผลลัพธ์(%)</th> -->
                                     <th>แก้ไขล่าสุด</th>
                                     <th>สถานะ</th>
                                     <th>จัดการ</th>
@@ -47,14 +43,14 @@
                                     <td><?= $counter += 1; ?></td>
                                     <td><?= $item['newyear']; ?></td>
                                     <td><?= $item['type_id']; ?></td>
-                                    <td><?= $item['goal']; ?></td>
+                                    <!--<td>--><?// = $item['goal']; ?><!--</td>-->
                                     <td><?= $item['target']; ?></td>
                                     <td><?= $item['result']; ?></td>
-                                    <td>
-                                        <? if(($item['target'] > 0) && ($item['result'] >= 0)): ?>
-                                        <?= number_format((($item['result'] / $item['target']) * 100), 2, '.', ''); ?>%
-                                        <? endif; ?>
-                                    </td>
+                                 <!--   <td>    -->
+                                        <? // if(($item['target'] > 0) && ($item['result'] >= 0)): ?>
+                                        <? // = number_format((($item['result'] / $item['target']) * 100), 2, '.', '');  ?> <!--%-->
+                                        <? // endif; ?>
+                                 <!--   </td>   -->
                                     <td><?= $item['created']; ?></td>  
                                     <td><?= $item['state']; ?></td> 
                                     <td align="center">

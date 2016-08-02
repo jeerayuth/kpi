@@ -15,6 +15,7 @@ class Kpi extends CActiveRecord {
 				"created" => "ปรับปรุงล่าสุด",
 				"type_id" => "ระยะเวลา", 
 				"state" => "สถานะการใช้",
+                                "process" => "เกณฑ์ประเมินผล",
 				
 			);
 		}

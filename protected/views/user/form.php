@@ -31,18 +31,11 @@
 
                             <div class="form-group">
                                 <label>
-                                    <?php echo $form->labelEx($model, "fname"); ?>
+                                    <?php echo $form->labelEx($model, "fullname"); ?>
                                 </label>
-                                <?php echo $form->textField($model, "fname", array("class" => "form-control")); ?>
+                                <?php echo $form->textField($model, "fullname", array("class" => "form-control")); ?>
                             </div>
-
-                            <div class="form-group">
-                                <label>
-                                    <?php echo $form->labelEx($model, "lname"); ?>
-                                </label>				
-                                <?php echo $form->textField($model, "lname", array("class" => "form-control")); ?>
-                            </div>
-
+    
                             <div class="form-group">
                                 <label>
                                     <?php echo $form->labelEx($model, "department_id"); ?>

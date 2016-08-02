@@ -15,7 +15,7 @@ class UserController extends Controller
 		
 		$sql = "
 		
-		SELECT u.id,concat(u.fname, '  ',u.lname) as full_name, u.type,
+		SELECT u.id, u.fullname, u.type,
 		u.created, u.status, d.name as dep_name
 		
 		FROM user u 

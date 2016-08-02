@@ -11,8 +11,7 @@ class User extends CActiveRecord {
 
 	public function attributeLabels(){
 		return array(
-			"fname"		=> "ชื่อจริง",
-			"lname"		=> "นามสกุล",
+			"fullname"	=> "ชื่อ-สกุล",
 			"username"	=> "Username",
 			"password"	=> "Password",
 			"type"		=> "ประเภทผู้ใช้",
@@ -24,7 +23,7 @@ class User extends CActiveRecord {
 
 	public function rules(){
 		return array(
-			array('fname,lname,username,password,type,status,department_id', 'required'),
+			array('fullname,username,password,type,status,department_id', 'required'),
 			array('username', 'unique'),
 		);
 	}

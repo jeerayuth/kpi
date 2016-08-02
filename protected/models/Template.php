@@ -16,13 +16,15 @@ class Template extends CActiveRecord {
 				"details" => "รายละเอียด",
 				"type_id" => "ระยะเวลา",
 				"created" => "วันที่สร้าง",
-				"state" => "สถานะ"
+				"state" => "สถานะ",
+                                "orderno" => "ลำดับแสดงผล",
+                                "family" => "กลุ่มตัวชี้วัด",
 			);
 		}
 
 		function rules(){
 			return array(
-				array('title,department_id,type_id, state','required'),
+				array('title,department_id,type_id, state, family','required'),
 			);
 		}
 }

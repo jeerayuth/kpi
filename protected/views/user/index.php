@@ -26,7 +26,7 @@
 <? foreach($model as $item){ ?>
 
      <tr class="odd gradeX">
-          <td><?= $item['full_name']; ?></td>
+          <td><?= $item['fullname']; ?></td>
           <td><?= $item['type']; ?></td>
           <td class="center"><?= $item['created']; ?></td>
           <td class="center"><?= $item['status']; ?></td>

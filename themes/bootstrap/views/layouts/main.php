@@ -65,7 +65,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site"><i class="glyphicon glyphicon-signal"></i> KPI Management System 1.0</a>
+                    <a class="navbar-brand" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site"><i class="glyphicon glyphicon-signal"></i> KPI Back Office 1.0</a>
 
                     <!-- /.navbar-header -->
                 </div>
@@ -76,8 +76,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user fa-fw"></i>
-                            <?php echo Yii::app()->session["fname"]; ?>
-                            <?php echo Yii::app()->session["lname"]; ?>
+                            <?php echo Yii::app()->session["fullname"]; ?>
                             <i class="fa fa-caret-down"></i>
                         </a>
 
@@ -112,7 +111,7 @@
 
                             <?php
                             $sql = "SELECT *
-						FROM template_type
+						FROM template_type WHERE state='enable'
 						ORDER BY id  ASC ";
                             $model = Yii::app()->db->createCommand($sql)->queryAll();
                             ?>      

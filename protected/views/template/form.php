@@ -36,16 +36,16 @@
                             </div>
                             
                             
-                            <div class="form-group">
-                                <label>
+                           <div class="form-group"> 
+                               <label> 
                                     <?php echo $form->labelEx($model, "template_type_level_id"); ?>
-                                </label>
+                                </label> 
 
                                 <?php
                                 $opts = CHtml::listData(Template_Type_Level::model()->findAll(), 'id', 'name');
                                 echo $form->dropDownList($model, 'template_type_level_id', $opts, array("class" => "form-control", "empty" => "--เลือกผลดำเนินงานทางด้าน--"));
                                 ?>
-                            </div>
+                            </div> 
                             
 
                             <div class="form-group">
@@ -90,7 +90,26 @@
                                 <?php echo ZHtml::enumDropDownList($model, "type_id", array("class" => "form-control", "empty" => "--เลือกระยะเวลา--")); ?>
 
                             </div>
+                            
+                              <div class="form-group">
+                                <label>
+                                    <?php echo $form->labelEx($model, "orderno"); ?>
+                                </label>
+                                <?php
+                                echo $form->textField($model, "orderno", array("class" => "form-control",
+                                    "placeholder" => "ระบุลำดับที่ใช้แสดงผลเป็นตัวเลข",
+                                ));
+                                ?>
+                            </div>
+                            
+                              <div class="form-group">
+                                <label>
+                                    <?php echo $form->labelEx($model, "family"); ?>
+                                </label>
+                                <?php echo ZHtml::enumDropDownList($model, "family", array("class" => "form-control", "empty" => "--กลุ่มตัวชี้วัด--")); ?>
 
+                            </div>
+                            
                             <div class="form-group">
                                 <label>
                                     <?php echo $form->labelEx($model, "state"); ?>

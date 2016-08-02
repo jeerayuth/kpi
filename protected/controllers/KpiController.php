@@ -18,7 +18,7 @@ class KpiController extends Controller {
                     LEFT OUTER JOIN newyear n ON n.id = k.newyear_id
                     LEFT OUTER JOIN template t ON t.id = k.template_id
                     WHERE k.template_id = '$template_id'
-                    ORDER BY n.id, k.created DESC
+                    ORDER BY n.name DESC
 				";
 
             $model = Yii::app()->db->createCommand($sql)->queryAll();

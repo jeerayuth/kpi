@@ -38,17 +38,11 @@
                                 </label>
 
                                 <?php
-                                $opts = CHtml::listData(Newyear::model()->findAll(), 'id', 'name');
+                                $opts = CHtml::listData(Newyear::model()->findAll(array('order' => 'name desc')), 'id', 'name');
 
-                                if (Yii::app()->session['type'] != 'admin') {
 
-                                    echo $form->dropDownList($model, 'newyear_id', $opts, array("class" => "form-control",
-                                        "disabled" => "disabled",
-                                        "empty" => "--เลือกปีงบประมาณ--"));
-                                } else {
-                                    echo $form->dropDownList($model, 'newyear_id', $opts, array("class" => "form-control",
-                                        "empty" => "--เลือกปีงบประมาณ--"));
-                                }
+                                echo $form->dropDownList($model, 'newyear_id', $opts, array("class" => "form-control",
+                                    "empty" => "--เลือกปีงบประมาณ--"));
                                 ?>
 
                             </div>
@@ -57,45 +51,41 @@
                                 <label>
                                     <?php echo $form->labelEx($model, "target"); ?>
                                 </label>
-                                <?php if (Yii::app()->session['type'] != 'admin') { ?>
-                                    <?php if ($model->state == "locked") { ?>
-                                        <?php echo $form->textField($model, "target", array("class" => "form-control", "disabled" => "disabled",)); ?>
-                                    <?php } else { ?>
-                                        <?php echo $form->textField($model, "target", array("class" => "form-control",)); ?>
-                                    <?php } ?>
-                                <?php } else { ?>
-                                    <?php echo $form->textField($model, "target", array("class" => "form-control",)); ?>
-                                <?php } ?>
+
+                                <?php echo $form->textField($model, "target", array("class" => "form-control",)); ?>
+
                             </div>
 
                             <div class="form-group">
                                 <label>
                                     <?php echo $form->labelEx($model, "result"); ?>
                                 </label>
-                                <?php if (Yii::app()->session['type'] != 'admin') { ?>
-                                    <?php if ($model->state == "locked") { ?>
-                                        <?php echo $form->textField($model, "result", array("class" => "form-control", "disabled" => "disabled",)); ?>
-                                    <?php } else { ?>
-                                        <?php echo $form->textField($model, "result", array("class" => "form-control",)); ?>
-                                    <?php } ?>
-                                <?php } else { ?>
-                                    <?php echo $form->textField($model, "result", array("class" => "form-control",)); ?>
-                                <?php } ?>
+
+                                <?php echo $form->textField($model, "result", array("class" => "form-control",)); ?>
+
 
                             </div>
 
-                            <? if(Yii::app()->session["type"] == "admin"): ?> 
                             <div class="form-group">
                                 <label>
-                                    <?php echo $form->labelEx($model, "type_id"); ?>
+                                    <?php echo $form->labelEx($model, "process"); ?>
                                 </label>
-                                <?php echo ZHtml::enumDropDownList($model, "type_id", array("class" => "form-control", "empty" => "--เลือกระยะเวลา--")); ?>
+                                <?php echo ZHtml::enumDropDownList($model, "process", array("class" => "form-control", "empty" => "--ผลลัพธ์--")); ?>
 
                             </div>
-                            <? endif ?>
+
+                            <!--
+                           <div class="form-group">
+                               <label>
+                            <?php //echo $form->labelEx($model, "type_id"); ?>
+                               </label>
+                            <?php //echo ZHtml::enumDropDownList($model, "type_id", array("class" => "form-control", "empty" => "--เลือกระยะเวลา--")); ?>
+
+                           </div>
+                            -->
 
 
-                            <? if(Yii::app()->session["type"] == "admin"): ?> 
+
                             <div class="form-group">
                                 <label>
                                     <?php echo $form->labelEx($model, "state"); ?>
@@ -103,7 +93,6 @@
                                 <?php echo ZHtml::enumDropDownList($model, "state", array("class" => "form-control", "empty" => "--เลือกสถานะ--")); ?>
 
                             </div>
-                            <? endif ?>
 
 
 
