@@ -19,6 +19,7 @@ class Template extends CActiveRecord {
 				"state" => "สถานะ",
                                 "orderno" => "ลำดับแสดงผล",
                                 "family" => "กลุ่มตัวชี้วัด",
+                                "content_type" => "ประเภทเนื้อหา",
 			);
 		}
 

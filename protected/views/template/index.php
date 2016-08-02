@@ -135,13 +135,21 @@
                                         <?php } ?>
                                     </td>
                                     <td><?= $item['goal']; ?></td>
-                                    <td><?= $item['department_name']; ?></td>
-
+                                    <td>
+                                         <?php if($item['content_type']=="เนื้อหา"){ ?>
+                                            <?= $item['department_name']; ?>
+                                         <?php } ?>
+                                    </td>
+                                  
                                     <td calss="center">
-                                        <? if(Yii::app()->session["type"] == "admin"): ?>  
-                                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=template/form&id=<?= $item['id']; ?>&template_type_id=<?= $template_type_id; ?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-pencil"></i> แก้ไข</a>  
-                                        <? endif ?>
-                                        <a target=_blank href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=kpi/index&template_id=<?= $item['id']; ?>&title=<?= $item['title'] ?>" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> เป้าหมาย</a>
+                                        <?php if($item['content_type']=="เนื้อหา"){ ?>
+                                        
+                                                <?php if(Yii::app()->session["type"] == "admin"): ?>                                        
+                                                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=template/form&id=<?= $item['id']; ?>&template_type_id=<?= $template_type_id; ?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-pencil"></i> แก้ไข</a>  
+                                                <?php endif ?>
+                                                
+                                                <a target=_blank href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=kpi/index&template_id=<?= $item['id']; ?>&title=<?= $item['title'] ?>" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> เป้าหมาย</a>
+                                            <?php } ?>
                                     </td>
 
                                 </tr>

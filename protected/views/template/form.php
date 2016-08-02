@@ -110,6 +110,14 @@
 
                             </div>
                             
+                             <div class="form-group">
+                                <label>
+                                    <?php echo $form->labelEx($model, "content_type"); ?>
+                                </label>
+                                <?php echo ZHtml::enumDropDownList($model, "content_type", array("class" => "form-control", "empty" => "--เลือกประเภทเนื้อหา--")); ?>
+
+                            </div>
+                            
                             <div class="form-group">
                                 <label>
                                     <?php echo $form->labelEx($model, "state"); ?>
