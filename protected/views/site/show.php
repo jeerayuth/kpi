@@ -120,7 +120,8 @@ $template_type = Yii::app()->db->createCommand($sql)->queryAll();
                                 <th>เป้าหมาย</th>                       
                                 <th>ปี2556</th>                         
                                 <th>ปี2557</th>
-                                <th>ปี2558</th>               
+                                <th>ปี2558</th> 
+                                <th>ปี2559</th> 
                             </tr>
                         </thead>
                         <tbody>
@@ -152,7 +153,8 @@ $template_type = Yii::app()->db->createCommand($sql)->queryAll();
                                 <td><?= $item['goal']; ?></td>                           
                                 <td><?= $item['Y_56']; ?></td>  
                                 <td><?= $item['Y_57']; ?></td> 
-                                <td><?= $item['Y_58']; ?></td> 
+                                <td><?= $item['Y_58']; ?></td>
+                                <td><?= $item['Y_59']; ?></td> 
 
 
 

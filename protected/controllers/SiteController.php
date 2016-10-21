@@ -115,7 +115,17 @@ t.id,t.family,t.title,t.goal,
 		from kpi k 
 	left outer join newyear n on n.id = k.newyear_id
 	where k.template_id = t.id and n.name = '2558'
-) as Y_58 ";
+) as Y_58,
+
+
+(
+	select max(k.result) 
+		from kpi k 
+	left outer join newyear n on n.id = k.newyear_id
+	where k.template_id = t.id and n.name = '2559'
+) as Y_59
+
+";
 
 if( !empty($newyear_id)){
     $sql.= ", (
