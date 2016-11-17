@@ -218,7 +218,7 @@ WHERE t.template_type_id = '$template_type_id' and t.state = 'enable'
                        
             }
             
-            
+            $sql.=" ORDER BY t.template_type_level_id,t.department_id,t.orderno ASC  ";
             
 
             $model = Yii::app()->db->createCommand($sql)->queryAll();

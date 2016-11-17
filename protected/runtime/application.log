@@ -5898,3 +5898,17 @@ Stack trace:
 REQUEST_URI=/kpi/index.php?r=site/show&template_type_id=1&department_id=1&template_type_level_id=2&newyear_id=5&newyear_name=2558&process=%27%E0%B8%9C%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%93%E0%B8%91%E0%B9%8C%27
 HTTP_REFERER=http://192.168.1.252/kpi/index.php?r=site/show&template_type_id=1&department_id=1&template_type_level_id=2&newyear_id=5&newyear_name=2558
 ---
+2016/11/17 11:24:23 [error] [php] implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed (C:\AppServ\www\kpi\protected\controllers\UserController.php:58)
+Stack trace:
+#0 C:\AppServ\www\kpi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\AppServ\www\kpi\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\AppServ\www\kpi\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\kpi\framework\web\CController.php(286): UserController->runAction()
+#4 C:\AppServ\www\kpi\framework\web\CController.php(265): UserController->runActionWithFilters()
+#5 C:\AppServ\www\kpi\framework\web\CWebApplication.php(282): UserController->run()
+#6 C:\AppServ\www\kpi\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\kpi\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\kpi\index.php(13): CWebApplication->run()
+REQUEST_URI=/kpi/index.php?r=user/form&id=101
+in C:\AppServ\www\kpi\protected\controllers\UserController.php (58)
+in C:\AppServ\www\kpi\index.php (13)
