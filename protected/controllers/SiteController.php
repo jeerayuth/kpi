@@ -80,7 +80,7 @@ class SiteController extends Controller {
                     
 SELECT
 
-t.id,t.family,t.title,t.goal,
+t.orderno,t.content_type,t.id,t.family,t.title,t.goal,t.image,
 
 (
 	select max(k.result) 

@@ -1,6 +1,7 @@
 <?php
 
 class Template extends CActiveRecord {
+                   
 		static function model($className = __CLASS__){
 			return parent::model($className);
 		}
@@ -20,12 +21,14 @@ class Template extends CActiveRecord {
                                 "orderno" => "ลำดับแสดงผล",
                                 "family" => "กลุ่มตัวชี้วัด",
                                 "content_type" => "ประเภทเนื้อหา",
+                                "image" => "นิยามตัวชี้วัด",
 			);
 		}
 
 		function rules(){
 			return array(
 				array('title,department_id,type_id, state, family','required'),
+                                array('image', 'file', 'types'=>'pdf,docx,doc,PDF,jpg, gif, png', 'safe' => false),
 			);
 		}
 }

@@ -140,12 +140,45 @@ $template_type = Yii::app()->db->createCommand($sql)->queryAll();
 
                                 <td>
                                     <?php
+                                    
+                                    $attach_src = Yii::app()->baseUrl.'/docs/';
+                                            
                                     if ($item['family'] == "parent") {
                                         echo $item['title'];
-                                    } else if ($item['family'] == "child") {
+
+									if($item['content_type'] != "หัวข้อ") {
+                                                                            ?>
+                                                                                
+                                                                            
+                                                                            <a href = "<?php echo $attach_src.$item["image"]; ?>">นิยามตัวชี้วัด</a>
+										
+                                                                            <?php
+                                                                                 }
+
+                             
+									} else if ($item['family'] == "child") {
                                         echo '&nbsp;&nbsp;&#9899; ' . $item['title'];
+
+										if($item['content_type'] != "หัวข้อ") {
+                                                                                    ?>
+                                                                            
+                                                                            
+                                                                                    <a href = "<?php echo $attach_src.$item["image"]; ?>">นิยามตัวชี้วัด</a>
+										
+                                                                                 <?php 
+										}
+
                                     } else {
                                         echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ' . $item['title'];
+
+										if($item['content_type'] != "หัวข้อ") {
+                                                                                    ?>
+                                                                                    
+										 <a href = "<?php echo $attach_src.$item["image"]; ?>">นิยามตัวชี้วัด</a>
+                                                                                 
+                                                                                <?php
+									}
+
                                     }
                                     ?>
                                 </td>
@@ -155,8 +188,6 @@ $template_type = Yii::app()->db->createCommand($sql)->queryAll();
                                 <td><?= $item['Y_57']; ?></td> 
                                 <td><?= $item['Y_58']; ?></td>
                                 <td><?= $item['Y_59']; ?></td> 
-
-
 
                             </tr>
 

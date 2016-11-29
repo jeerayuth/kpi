@@ -108,6 +108,7 @@
                             </thead>
                             <tbody>
                                 <?php $counter = 0; ?>
+                                <?php $attach_src = Yii::app()->baseUrl.'/docs/'; ?>
                                 <? foreach($model as $item){ ?>
 
                                 <tr class="odd gradeX">
@@ -121,10 +122,25 @@
                                         <?php
                                         if ($item['family'] == "parent") {
                                             echo $item['title'];
+                                            if($item['content_type'] != "หัวข้อ") {
+                                                ?>
+                                                <a href = "<?php echo $attach_src.$item["image"]; ?>">นิยามตัวชี้วัด</a>
+                                                <?php
+                                            }
                                         } else if ($item['family'] == "child") {
                                             echo '&nbsp;&nbsp;&#9899; ' . $item['title'];
+                                            if($item['content_type'] != "หัวข้อ") {
+                                                ?>
+                                                <a href = "<?php echo $attach_src.$item["image"]; ?>">นิยามตัวชี้วัด</a>
+                                                <?php
+                                            }
                                         } else {
                                             echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ' . $item['title'];
+                                            if($item['content_type'] != "หัวข้อ") {
+                                                ?>
+                                                <a href = "<?php echo $attach_src.$item["image"]; ?>">นิยามตัวชี้วัด</a>
+                                                <?php
+                                            }
                                         }
                                         ?>
 

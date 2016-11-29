@@ -16,8 +16,10 @@
                             <?php
                             $form = $this->beginWidget('CActiveForm', array(
                                 'htmlOptions' => array(
-                                    'role' => 'form'
+                                    'role' => 'form',
+                                    'enctype'=>'multipart/form-data'
                                 ),
+                                
                             ));
                             ?>
 
@@ -117,7 +119,8 @@
                                 <?php echo ZHtml::enumDropDownList($model, "content_type", array("class" => "form-control", "empty" => "--เลือกประเภทเนื้อหา--")); ?>
 
                             </div>
-                            
+
+                           
                             <div class="form-group">
                                 <label>
                                     <?php echo $form->labelEx($model, "state"); ?>
@@ -126,7 +129,14 @@
 
                             </div>
 
-
+                            <div clas="form-group">
+                                 <label>
+                                    <?php echo $form->labelEx($model, "image"); ?>
+                                </label>
+                                <?php echo CHtml::activeFileField($model, 'image'); ?>
+                                
+                            </div>
+                            <br/>
 
                             <div class="form-group">
                                 <input class="btn btn-lg btn-info btn-block" type="submit" value="บันทึกข้อมูลตัวชี้วัด">
